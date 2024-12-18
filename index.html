@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet" />
+    <script src="scripts/treasure.js" defer></script>
+    <title>寻宝游戏</title>
+</head>
+<body>
+    <!-- 背景音乐 -->
+    <audio id="background-music" autoplay loop>
+        <source src="./data/music.mp3" type="audio/mp3">
+        <source src="./data/music.ogg" type="audio/ogg"> <!-- 添加ogg格式作为备选 -->
+    </audio>
+
+    <!-- 登录弹窗 -->
+    <div id="login-modal" class="login-modal">
+        <div class="login-modal-content">
+            <h2>请登录</h2>
+            <form id="login-form" class="login-form">
+                <input type="text" id="username" name="username" placeholder="用户名" required />
+                <input type="password" id="password" name="password" placeholder="密码" required />
+                <button type="submit">登录</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 用户信息展示区域 -->
+    <div id="user-info" class="user-info">
+        <img src="./images/7.jpg" alt="用户头像" class="user-avatar">
+        <span id="user-name" class="user-name">用户名</span>
+    </div>
+
+    <!-- 游戏标题 -->
+    <h1 class="game-title">
+        <span>寻</span><span>宝</span><span>游</span><span>戏</span>
+    </h1>
+
+    <!-- 图片展示区域 -->
+    <div class="image-row">
+        <img src="./images/1.png" alt="图书馆" class="image" id="library-img">
+        <img src="./images/6.png" alt="密码锁" class="image" id="lock-img">
+        <img src="./images/2.png" alt="神庙" class="image" id="temple-img" style="display: none;">
+    </div>
+
+    <!-- 显示守卫和宝藏图片 -->
+    <div class="image-row">
+        <img src="./images/3.png" alt="守卫" class="image" id="guard-img" style="display: none;">
+        <img src="./images/4.png" alt="宝藏" class="image" id="treasure-img" style="display: none;">
+    </div>
+
+    <!-- 显示当前游戏状态 -->
+    <div id="status" class="status"></div>
+
+    <!-- 详细信息展示框 -->
+    <div id="info-box" class="info-box">
+        <!-- 标题部分 -->
+        <div id="info-title" class="info-title">请选择一个地点</div>
+        <!-- 内容部分 -->
+        <div id="info-content" class="info-content">详细信息将在此显示</div>
+    </div>
+</body>
+</html>
